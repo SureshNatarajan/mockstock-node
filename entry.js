@@ -11,7 +11,7 @@ const route = require('./route/routes');
 const suggestStocksRoutes = require('./route/suggestStocksRoutes');
 
 //connect to Mongo
-mongoose.connect('mongodb://127.0.0.1:27017/');
+/*mongoose.connect('mongodb://127.0.0.1:27017/');
 
 mongoose.connection.on('connected', () => {
     console.log('Mongo DB connected at port 27017');
@@ -20,7 +20,7 @@ mongoose.connection.on('connected', () => {
 mongoose.connection.on('error', (err) => {
     console.log(err);
 });
-
+*/
 //Assign a port for listening to request/response
 const PORT = 3000;
 
