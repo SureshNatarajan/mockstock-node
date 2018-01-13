@@ -21,12 +21,24 @@ mongoose.connection.on('error', (err) => {
     console.log(err);
 });
 */
+//mongodb://<dbuser>:<dbpassword>@ds143030.mlab.com:43030/mockstock-mongo
+mongoose.connect('mongodb://ds143030.mlab.com:43030/mockstock-mongo',
+                {user:'mockstock-admin', pass:'MockStock'});
+
+mongoose.connection.on('connected', () => {
+    console.log('Mongo DB connected at port 43030');
+});
+
+mongoose.connection.on('error', (err) => {
+    console.log(err);
+});
+
 //Assign a port for listening to request/response
 //const PORT = 3000;
 app.set('port', (process.env.PORT || 8080))
 
 //app.listen(PORT, () => {
-app.listen(app.get('port'),() => {    
+app.listen(app.get('port'),() => {
     console.log('Application has been started and running in port:' + app.get('port'));
 });
 
