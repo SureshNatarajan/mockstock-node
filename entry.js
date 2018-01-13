@@ -22,10 +22,12 @@ mongoose.connection.on('error', (err) => {
 });
 */
 //Assign a port for listening to request/response
-const PORT = 3000;
+//const PORT = 3000;
+app.set('port', (process.env.PORT || 8080))
 
-app.listen(PORT, () => {
-    console.log('Application has been started');
+//app.listen(PORT, () => {
+app.listen(app.get('port'),() => {    
+    console.log('Application has been started and running in port:' + app.get('port'));
 });
 
 //Add the middleware
